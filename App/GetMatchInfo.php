@@ -3,6 +3,7 @@
 namespace App;
 
 
+use DiDom\Document;
 use GuzzleHttp\Client;
 use function GuzzleHttp\json_decode;
 
@@ -26,6 +27,9 @@ class GetMatchInfo
         $this->matchId = $matchId;
     }
 
+    /**
+     * Главный метод поиска матчей из csv
+     */
     public function parseData()
     {
         if (!$this->isParsingNeeded()) {

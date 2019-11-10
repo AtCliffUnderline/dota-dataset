@@ -4,9 +4,13 @@ use App\GetMatchInfo;
 
 require_once 'vendor/autoload.php';
 
-$matches = explode(',', file_get_contents('matches.csv'));
+$matches = explode(',', file_get_contents('ix.csv'));
 foreach ($matches as $key => $matchId) {
     echo "\r".'parsed ' . $key . ' matches out of ' . sizeof($matches);
     $parser = new GetMatchInfo($matchId);
-    $parser->parseData();
+    try {
+        $parser->parseData();
+    } catch(Exception $e) {
+        echo "\nCaught on $matchId: ".$e->getMessage()."\n";
+    }
 }

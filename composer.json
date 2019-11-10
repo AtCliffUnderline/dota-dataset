@@ -1,6 +1,7 @@
 {
     "require": {
-        "guzzlehttp/guzzle": "^6.4"
+        "guzzlehttp/guzzle": "^6.4",
+        "imangazaliev/didom": "^1.14"
     },
     "autoload": {
         "psr-4": {
